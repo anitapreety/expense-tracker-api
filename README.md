@@ -2,25 +2,25 @@
 
 ## Overview
 
-Smart Expense Tracker API is a RESTful web service built using FastAPI for managing personal expenses. It allows users to create, retrieve, filter, summarize, and delete expense records. Expense data is stored in a local JSON file, providing a simple and lightweight persistence mechanism while meeting the assignment requirements.
+Smart Expense Tracker API is a RESTful web service built using FastAPI for managing personal expenses. The application allows users to create, retrieve, filter, summarize, and delete expense records. Expense data is stored in a local JSON file, providing a simple and lightweight persistence mechanism while meeting the assignment requirements.
 
 ---
 
-# Features
+## Features
 
-- Add a new expense
+- Create a new expense
 - Retrieve all expenses
 - Retrieve an expense by its ID
 - Filter expenses by category
-- View expense summary (total expenses and category-wise totals)
+- View total expenses and category-wise summary
 - Delete an expense
 - Automatic request validation using Pydantic
-- Interactive OpenAPI documentation with Swagger UI and ReDoc
+- Interactive API documentation using Swagger UI and ReDoc
 - Automated API testing using Pytest
 
 ---
 
-# Technology Stack
+## Technology Stack
 
 - Python 3.14
 - FastAPI
@@ -30,7 +30,7 @@ Smart Expense Tracker API is a RESTful web service built using FastAPI for manag
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 expense-tracker-api/
@@ -55,17 +55,12 @@ expense-tracker-api/
 
 ---
 
-# Installation
+## Installation
 
-Clone the repository:
-
-```bash
-git clone https://github.com/<your-github-username>/expense-tracker-api.git
-```
-
-Navigate to the project folder:
+Clone the repository and navigate to the project directory:
 
 ```bash
+git clone https://github.com/anitapreety/expense-tracker-api.git
 cd expense-tracker-api
 ```
 
@@ -79,7 +74,7 @@ Activate the virtual environment.
 
 ### Windows
 
-```bash
+```powershell
 .venv\Scripts\Activate.ps1
 ```
 
@@ -89,7 +84,7 @@ Activate the virtual environment.
 source .venv/bin/activate
 ```
 
-Install all required dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -97,7 +92,7 @@ pip install -r requirements.txt
 
 ---
 
-# Running the Application
+## Running the Application
 
 Start the FastAPI development server:
 
@@ -105,49 +100,49 @@ Start the FastAPI development server:
 uvicorn src.main:app --reload
 ```
 
-The application will start at:
+The application will be available at:
 
-```
+```text
 http://127.0.0.1:8000
 ```
 
 ---
 
-# API Documentation (Bonus Feature)
+## Bonus Feature
 
-FastAPI automatically generates interactive OpenAPI documentation.
+This project includes the optional **OpenAPI/Swagger Documentation** feature.
 
 Swagger UI:
 
-```
+```text
 http://127.0.0.1:8000/docs
 ```
 
 ReDoc:
 
-```
+```text
 http://127.0.0.1:8000/redoc
 ```
 
-This project uses FastAPI's built-in OpenAPI documentation as the optional bonus feature.
+These interfaces allow all API endpoints to be explored and tested directly from the browser.
 
 ---
 
-# API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
-|---------|----------|-------------|
+|--------|----------|-------------|
 | GET | `/` | Home endpoint |
 | POST | `/expenses/` | Create a new expense |
 | GET | `/expenses/` | Retrieve all expenses |
 | GET | `/expenses/{expense_id}` | Retrieve an expense by ID |
 | GET | `/expenses/category/{category}` | Retrieve expenses by category |
-| GET | `/expenses/summary` | Retrieve expense summary |
+| GET | `/expenses/summary` | Retrieve total and category-wise expense summary |
 | DELETE | `/expenses/{expense_id}` | Delete an expense |
 
 ---
 
-# Running Tests
+## Running Tests
 
 Run the automated test suite using:
 
@@ -155,31 +150,31 @@ Run the automated test suite using:
 python -m pytest
 ```
 
-The test suite verifies the core API functionality including:
+The tests verify the application's core functionality, including:
 
-- Creating an expense
+- Creating expenses
 - Retrieving expenses
-- Retrieving expenses by category
-- Viewing expense summary
-- Deleting an expense
+- Filtering expenses by category
+- Viewing expense summaries
+- Deleting expenses
 
 ---
 
-# Design Decisions
+## Design Decisions
 
-The project was intentionally kept simple and modular.
+The application was intentionally designed to remain simple, modular, and easy to maintain.
 
 Key design decisions include:
 
-- FastAPI was chosen for its performance, simplicity, and automatic API documentation.
-- Pydantic models are used to validate incoming request data.
-- JSON file storage was selected because it satisfies the assignment requirements without introducing unnecessary complexity.
-- The application is separated into modules for routing, models, and storage to improve maintainability.
-- Automated tests were added to verify the application's core functionality.
+- FastAPI was chosen for its simplicity, performance, and built-in API documentation.
+- Pydantic models validate incoming request data before processing.
+- JSON file storage was selected to satisfy the assignment requirements without introducing unnecessary complexity.
+- The project is organized into separate modules for routing, models, and storage to improve readability and maintainability.
+- Automated tests were added to verify the core API functionality.
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 Possible future enhancements include:
 
@@ -190,6 +185,6 @@ Possible future enhancements include:
 
 ---
 
-# Author
+## Author
 
 Developed by **Anita Preety** as part of a Software Engineering Apprenticeship technical assessment using Python and FastAPI.
